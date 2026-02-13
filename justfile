@@ -12,6 +12,9 @@ subset-ontology:
     mkdir -p output
     {{ROBOT}} remove --input downloads/fma.owl \
       --axioms disjoint \
+      --output output/fma-no-disjoints.owl
+    {{ROBOT}} query --input output/fma-no-disjoints.owl \
+      --update sparql/remove-derives-from-ranges.ru \
       --output output/fma-fixed.owl
 
 reason:
