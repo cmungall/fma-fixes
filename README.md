@@ -9,6 +9,8 @@ The FMA OWL distribution has **69,151 unsatisfiable classes** due to two root ca
 
 These cascade through FMA's dense network of existential restrictions to affect the majority of classes.
 
+See also: [OBOFoundry/OBOFoundry.github.io#21](https://github.com/OBOFoundry/OBOFoundry.github.io/issues/21)
+
 ## Setup
 
 This repo is designed primarily for use with AI coding agents (e.g. [Claude Code](https://claude.ai/claude-code)).
