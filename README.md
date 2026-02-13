@@ -1,6 +1,14 @@
-# FMA Fixes
+# FMA Fixed
 
-Fixes for the [Foundational Model of Anatomy (FMA)](http://si.washington.edu/projects/fma) ontology (v5.0.0).
+A community effort to produce a satisfiable version of the [Foundational Model of Anatomy (FMA)](http://si.washington.edu/projects/fma) ontology (v5.0.0).
+
+## Goals
+
+1. **Satisfiability** — eliminate the 69,151 unsatisfiable classes in the current FMA OWL distribution
+2. **Compatibility** — preserve behavior for most existing FMA use cases (though these are largely undefined)
+3. **Fidelity** — stay as close as possible to the original intent of the FMA developers (which is not always clear from the OWL encoding alone)
+
+## Problem
 
 The FMA OWL distribution has **69,151 unsatisfiable classes** due to two root causes:
 
