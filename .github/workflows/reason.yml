@@ -1,0 +1,38 @@
+name: Reason FMA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  reason:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+
+      - uses: extractions/setup-just@v2
+
+      - name: Cache ROBOT jar
+        uses: actions/cache@v4
+        with:
+          path: downloads/robot.jar
+          key: robot-v1.9.6
+
+      - name: Setup ROBOT
+        run: just setup-robot
+
+      - name: Download FMA
+        run: just download
+
+      - name: Remove disjointness axioms
+        run: just subset-ontology
+
+      - name: Reason with ELK
+        run: just reason
